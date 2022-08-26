@@ -14,10 +14,12 @@ class SimpleCalculator
       System.out.println("5.REMAINDER");
       System.out.println("enter your choice:");
        choice=sc.nextInt();
+      if (choice>=1&&choice<=5)
+      {
       System.out.println("enter two inputs a and b");
        a=sc.nextInt();
        b=sc.nextInt();
-      switch(choice)
+         switch(choice)
         {
           case 1:
             int add=a+b;
@@ -39,9 +41,11 @@ class SimpleCalculator
             int rem=a%b;
             System.out.println("result is "+rem);
             break;
-          default:
-            System.out.println("select the correct choice");
-            
         }
+      }
+      else
+      {
+         System.out.println("select the correct choice"); 
+      }
     }
   }
