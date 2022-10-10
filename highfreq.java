@@ -1,10 +1,12 @@
 import java.util.Scanner;
-class frequency
+class highfreq
   {
-  public static void main(String args[])
-  {
-    String s;
-    int i,j,n;
+    public static void main(String args[])
+    {
+      String s;
+     
+    int i,j,n,max=0,charindex=0;
+    
     Scanner sc=new Scanner(System.in);
     System.out.println("enter the string ");
      s=sc.nextLine();
@@ -15,13 +17,10 @@ class frequency
      
         visited[i]=false;
       }
-   
-    System.out.println("character  count");
      for(i=0;i<n;i++)
        {
          if(visited[i]==true)
            continue;
-       
        
        int c=1;
     for(j=i+1;j<n;j++)
@@ -31,9 +30,14 @@ class frequency
           visited[j]=true;
         c++;
         }
-      } 
-       
-    System.out.println("  "+s.charAt(i) + "\t\t    "     +c);      
+      }
+        if(max<c)
+        {
+          max=c;
+          charindex=i;
+        }
+         
   }
+     System.out.println("Highest frequency character is "+s.charAt(charindex)+" which occurs "+max+" times");
   }
 }
